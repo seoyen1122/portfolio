@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jihwan Kim — Portfolio</title>
+  <meta name="description" content="AI/ML 연구 및 프로젝트 포트폴리오" />
+
+  <!-- Open Graph / Twitter (필요 시 수정) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jihwan Kim — Portfolio" />
+  <meta property="og:description" content="AI/ML 연구 및 프로젝트 포트폴리오" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:url" content="https://your-github-username.github.io" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- 기본 스타일: 다크/라이트 테마 자동 지원 -->
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --fg: #e6edf3;
+      --muted: #9db1c3;
+      --card: #0f1621;
+      --accent: #4ea1ff;
+      --border: #1e2937;
+    }
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #ffffff;
+        --fg: #0b1220;
+        --muted: #4b5563;
+        --card: #f7fafc;
+        --accent: #0b6cff;
+        --border: #e5e7eb;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: static; width: auto; height: auto; padding: .5rem .75rem; background: var(--accent); color: #fff; border-radius: .5rem; }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in oklab, var(--bg) 86%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; }
+    .brand img { width: 28px; height: 28px; border-radius: 8px; }
+    .nav-links { display: flex; gap: 1rem; }
+
+    .hero { padding: 64px 0 28px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 44px); line-height: 1.15; margin: 0 0 .5rem; }
+    .hero p { color: var(--muted); margin: 0; }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin: 32px 0 64px; }
+    .card {
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: transform .1s ease, box-shadow .1s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.15); }
+    .card h3 { margin: 0 0 .25rem; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    .card .meta { margin-top: .75rem; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+
+    @media (min-width: 760px) {
+      .card { grid-column: span 6; }
+    }
+    @media (min-width: 1024px) {
+      .card { grid-column: span 4; }
+    }
+
+    section + section { margin-top: 48px; }
+    section h2 { margin: 0 0 12px; font-size: 22px; }
+
+    footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header>
+    <div class="container">
+      <nav aria-label="주요">
+        <div class="brand">
+          <img src="/assets/avatar.png" alt="프로필 아이콘" />
+          <span>Jihwan Kim</span>
+        </div>
+        <div class="nav-links" role="menubar">
+          <!-- 필요 시 링크 수정 -->
+          <a role="menuitem" href="#projects">Projects</a>
+          <a role="menuitem" href="#publications">Publications</a>
+          <a role="menuitem" href="#about">About</a>
+          <a role="menuitem" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- 히어로 영역 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">Hi, I’m Jihwan — AI/ML Researcher & Engineer</h1>
+      <p>Multimodal learning, segmentation, and generative models. I like building clear, reproducible systems and useful demos.</p>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Featured Projects</h2>
+      <div class="grid">
+        <!-- 카드 하나 템플릿 -->
+        <article class="card">
+          <h3><a href="#" target="_blank" rel="noopener">Climate AR Segmentation with MaskFormer</a></h3>
+          <p>Multi‑channel climate fields → AR segmentation. Custom NetCDF mapper, balanced loss, and evaluation toolkit.</p>
+          <div class="meta">
+            <span>Python • PyTorch</span>
+            <span>2025</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="#" target="_blank" rel="noopener">ChannelViT for Multi‑Channel Perception</a></h3>
+          <p>Channel‑wise embeddings for independent information streams; improved stability & mIoU on ClimateNet.</p>
+          <div class="meta">
+            <span>ViT</span>
+            <span>Research</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="#" target="_blank" rel="noopener">Ebook → BGM Generator</a></h3>
+          <p>Page‑level sentiment → audio prompts; 20‑second loops via text‑to‑audio models, simple mixing & export.</p>
+          <div class="meta">
+            <span>AudioGen</span>
+            <span>Prototype</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 논문/발표 섹션 -->
+    <section id="publications" aria-labelledby="pubs-title">
+      <h2 id="pubs-title">Publications & Talks</h2>
+      <ul>
+        <li>
+          <strong>AR Segmentation Beyond Heuristics</strong> — Poster, 2025. <a href="#">PDF</a>
+        </li>
+        <li>
+          <strong>ChannelViT: Per‑Channel Tokenization</strong> — Draft. <a href="#">arXiv</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 소개 섹션 -->
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <p>학부 연구 · 기후 과학 세그멘테이션 · 멀티모달 생성 모델을 중심으로 프로젝트를 진행하고 있습니다. 실험 재현성과 문서를 중요하게 생각합니다.</p>
+    </section>
+
+    <!-- 연락 섹션 -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email: <a href="mailto:you@example.com">you@example.com</a> · GitHub: <a href="https://github.com/your-github-username" target="_blank" rel="noopener">@your-github-username</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Jihwan Kim. Built with ❤ on GitHub Pages.</div>
+  </footer>
+
+  <script>
+    // 현재 연도 자동 표기
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // (선택) 서비스 워커 등록 — PWA 필요 시 /sw.js 추가 후 활성화
+    // if ('serviceWorker' in navigator) {
+    //   window.addEventListener('load', () => {
+    //     navigator.serviceWorker.register('/sw.js');
+    //   });
+    // }
+  </script>
+</body>
+</html>
