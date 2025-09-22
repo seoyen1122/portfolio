@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jihwan Kim — Portfolio</title>
-  <meta name="description" content="AI/ML 연구 및 프로젝트 포트폴리오" />
+  <title>Seo Yen Lim — Portfolio</title>
+  <meta name="description" content="AI/ML Portfolio" />
 
   <!-- Open Graph / Twitter (필요 시 수정) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Jihwan Kim — Portfolio" />
-  <meta property="og:description" content="AI/ML 연구 및 프로젝트 포트폴리오" />
+  <meta property="og:title" content="Seo Yen Lim — Portfolio" />
+  <meta property="og:description" content="AI/ML Portfolio" />
   <meta property="og:image" content="/assets/og-image.png" />
-  <meta property="og:url" content="https://your-github-username.github.io" />
+  <meta property="og:url" content="https://seoyen1122.github.io/portfolio" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="/assets/favicon.ico" />
@@ -19,13 +19,14 @@
   <link rel="manifest" href="/site.webmanifest" />
 
   <!-- 기본 스타일: 다크/라이트 테마 자동 지원 -->
+  <!-- #0b6cff -->
   <style>
     :root {
       --bg: #0b0f14;
       --fg: #e6edf3;
       --muted: #9db1c3;
       --card: #0f1621;
-      --accent: #4ea1ff;
+      --accent: #04bde2;
       --border: #1e2937;
     }
     @media (prefers-color-scheme: light) {
@@ -34,7 +35,7 @@
         --fg: #0b1220;
         --muted: #4b5563;
         --card: #f7fafc;
-        --accent: #0b6cff;
+        --accent: #04bde2; 
         --border: #e5e7eb;
       }
     }
@@ -104,7 +105,7 @@
       <nav aria-label="주요">
         <div class="brand">
           <img src="/assets/avatar.png" alt="프로필 아이콘" />
-          <span>Jihwan Kim</span>
+          <span>Seo Yen LIm</span>
         </div>
         <div class="nav-links" role="menubar">
           <!-- 필요 시 링크 수정 -->
@@ -120,36 +121,52 @@
   <main id="main" class="container">
     <!-- 히어로 영역 -->
     <section class="hero" aria-labelledby="hero-title">
-      <h1 id="hero-title">Hi, I’m Jihwan — AI/ML Researcher & Engineer</h1>
+      <h1 id="hero-title">Welcome to Seo Yen's Homepage</h1>
       <p>Multimodal learning, segmentation, and generative models. I like building clear, reproducible systems and useful demos.</p>
     </section>
 
     <!-- 프로젝트 섹션 -->
     <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Featured Projects</h2>
+      <h2 id="projects-title">Projects</h2>
       <div class="grid">
         <!-- 카드 하나 템플릿 -->
         <article class="card">
-          <h3><a href="#" target="_blank" rel="noopener">Climate AR Segmentation with MaskFormer</a></h3>
+          <h3><a href="https://github.com/seoyen1122/livinglab" target="_blank" rel="noopener">Transformer-Based Atmospheric River Segmentation Model from Climate Reanalysis Data</a></h3>
           <p>Multi‑channel climate fields → AR segmentation. Custom NetCDF mapper, balanced loss, and evaluation toolkit.</p>
           <div class="meta">
-            <span>Python • PyTorch</span>
+            <span>Python • PyTorch • CV</span>
             <span>2025</span>
           </div>
         </article>
         <article class="card">
-          <h3><a href="#" target="_blank" rel="noopener">ChannelViT for Multi‑Channel Perception</a></h3>
-          <p>Channel‑wise embeddings for independent information streams; improved stability & mIoU on ClimateNet.</p>
+          <h3><a href="#" target="_blank" rel="noopener">ebook BGM Generator</a></h3>
+          <p>Window-level sentiment → audio prompts; 20‑second loops via text‑to‑audio modelst</p>
           <div class="meta">
-            <span>ViT</span>
-            <span>Research</span>
+            <span>Python • PyTorch • NLP</span>
+            <span>Startup Hackathon</span>
           </div>
         </article>
         <article class="card">
-          <h3><a href="#" target="_blank" rel="noopener">Ebook → BGM Generator</a></h3>
-          <p>Page‑level sentiment → audio prompts; 20‑second loops via text‑to‑audio models, simple mixing & export.</p>
+          <h3><a href="https://github.com/use08174/SpeechPT" target="_blank" rel="noopener">AI Speech Practice Website</a></h3>
+          <p>Developing a web platform for AI-driven speech practice with real-time feedback</p>
           <div class="meta">
-            <span>AudioGen</span>
+            <span>Python • PyTorch • FastAPI • NLP</span>
+            <span>Prototype</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/jjihwan/Voice-Cloning" target="_blank" rel="noopener">Voice Conversion</a></h3>
+          <p>Real-time AI voice conversion that keeps the words and intonation the same while changing the speaker’s tone to any target style.</p>
+          <div class="meta">
+            <span>Python • PyTorch • Audio</span>
+            <span>Youtube Shorts</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="#" target="_blank" rel="noopener">Weathie</a></h3>
+          <p>B2B weather-based route recommendation service</p>
+          <div class="meta">
+            <span>Startup</span>
             <span>Prototype</span>
           </div>
         </article>
@@ -158,44 +175,45 @@
 
     <!-- 논문/발표 섹션 -->
     <section id="publications" aria-labelledby="pubs-title">
-      <h2 id="pubs-title">Publications & Talks</h2>
+      <h2 id="pubs-title">Publications & Paper Review</h2>
       <ul>
         <li>
-          <strong>AR Segmentation Beyond Heuristics</strong> — Poster, 2025. <a href="#">PDF</a>
+          <strong>Transformer-Based Atmospheric River Segmentation Model from Climate Reanalysis Data</strong> — Abstract. Summited in AGU, 2025. <a href="#">PDF</a>
         </li>
         <li>
-          <strong>ChannelViT: Per‑Channel Tokenization</strong> — Draft. <a href="#">arXiv</a>
+          <strong>Paper Review</strong> — Velog <a href="https://velog.io/@ittechhurray/posts">arXiv</a>
         </li>
       </ul>
     </section>
 
     <!-- 소개 섹션 -->
+    <section id="Experience" aria-labelledby="about-title">
+      <h2 id="about-title">Experience</h2>
+      <p>2024.04 - 2025.06: AIstein Lab Internship</p>
+    </section>
+
+
+    <!-- 소개 섹션 -->
     <section id="about" aria-labelledby="about-title">
-      <h2 id="about-title">About</h2>
+      <h2 id="about-title">About Me !</h2>
       <p>학부 연구 · 기후 과학 세그멘테이션 · 멀티모달 생성 모델을 중심으로 프로젝트를 진행하고 있습니다. 실험 재현성과 문서를 중요하게 생각합니다.</p>
     </section>
 
     <!-- 연락 섹션 -->
     <section id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a> · GitHub: <a href="https://github.com/your-github-username" target="_blank" rel="noopener">@your-github-username</a></p>
+      <p>Email: <a href="mailto:you@example.com">seoyen1122@gmail.com</a> · GitHub: <a href="https://github.com/seoyen1122" target="_blank" rel="noopener">@seoyen1122</a></p>
     </section>
   </main>
 
   <footer>
-    <div class="container">© <span id="y"></span> Jihwan Kim. Built with ❤ on GitHub Pages.</div>
+    <div class="container">© <span id="y"></span> Seo Yen Lim. Built with ❤ on GitHub Pages.</div>
   </footer>
 
   <script>
     // 현재 연도 자동 표기
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // (선택) 서비스 워커 등록 — PWA 필요 시 /sw.js 추가 후 활성화
-    // if ('serviceWorker' in navigator) {
-    //   window.addEventListener('load', () => {
-    //     navigator.serviceWorker.register('/sw.js');
-    //   });
-    // }
   </script>
 </body>
 </html>
