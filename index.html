@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Seo Yen Lim — Portfolio</title>
+  <meta name="description" content="AI/ML Portfolio" />
+
+  <!-- Open Graph / Twitter (필요 시 수정) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Seo Yen Lim — Portfolio" />
+  <meta property="og:description" content="AI/ML Portfolio" />
+  <meta property="og:image" content="/assets/og-image.png" />
+  <meta property="og:url" content="https://seoyen1122.github.io/portfolio" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --fg: #e6edf3;
+      --muted: #9db1c3;
+      --card: #0f1621;
+      --accent: #ff7a00;
+      --border: #1e2937;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font: 15px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { width: min(1100px, 92%); margin: 0 auto; }
+    .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { position: static; width: auto; height: auto; padding: .5rem .75rem; background: var(--accent); color: #fff; border-radius: .5rem; }
+
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in oklab, var(--bg) 86%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; }
+    .brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; }
+    .nav-links { display: flex; gap: 1rem; }
+
+    /* 헤더 로고: 동그라미 없이 당근만 */
+    .carrot-logo {
+      font-size: 18px;
+    }
+    .brand span:last-child {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin: 32px 0 64px; }
+    .card {
+      grid-column: span 12;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      transition: transform .1s ease, box-shadow .1s ease;
+    }
+    .card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.15); }
+    .card h3 { margin: 0 0 .25rem; font-size: 18px; }
+    .card p { margin: 0; color: var(--muted); }
+    .card .meta { margin-top: .75rem; font-size: 13px; color: var(--muted); display: flex; gap: 10px; flex-wrap: wrap; }
+
+    @media (min-width: 760px) {
+      .card { grid-column: span 6; }
+    }
+    @media (min-width: 1024px) {
+      .card { grid-column: span 4; }
+    }
+
+    section + section { margin-top: 48px; }
+    section h2 { margin: 0 0 12px; font-size: 22px; }
+
+    footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); }
+
+    /* 히어로 영역 */
+    .hero {
+      padding: 72px 0 40px;
+      text-align: center;
+    }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.2;
+    }
+
+    /* 주황색 인사 문구 */
+    .hero-highlight {
+      margin: 6px 0 18px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    /* 히어로 사진 */
+    .hero-photo {
+      display: block;
+      width: 220px;
+      height: auto;
+      border-radius: 16px;
+      margin: 0 auto 24px;
+      object-fit: cover;
+    }
+
+    /* 중앙에 놓되 왼쪽 정렬된 텍스트 블록 */
+    .hero-body {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .hero-text h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--accent);    /* Why 제목 주황색 */
+    }
+
+    .hero-text p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+  <header>
+    <div class="container">
+      <nav aria-label="주요">
+        <div class="brand">
+          <span class="carrot-logo">🥕</span>
+          <span>임서연</span>
+        </div>
+        <div class="nav-links" role="menubar">
+          <a role="menuitem" href="#experience">Experience</a>  
+          <a role="menuitem" href="#projects">Projects</a>
+          <a role="menuitem" href="#publications">Publications</a>
+          <a role="menuitem" href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- 히어로 영역 -->
+    <section class="hero" aria-labelledby="hero-title">
+      <!-- 2. 핀 이모티콘 제거한 제목 -->
+      <h1 id="hero-title">당근에서 Machine Learning Intern을 찾고 계신가요?</h1>
+
+      <!-- 3. 주황색 인사 문구 -->
+      <p class="hero-highlight">
+        반갑습니다! Machine Learning Intern 지원자 <strong>임서연</strong>입니다!
+      </p>
+
+      <!-- 3. 인사 밑에 중앙 사진 -->
+      <img src="profile.jpg" alt="Profile photo of Seo Yen Lim" class="hero-photo" />
+
+      <!-- Why 섹션: 중앙 기준, 좌측 정렬 -->
+      <div class="hero-body hero-text">
+        <h3>Why 당근?</h3>
+        <p>
+          제 주변에서 당근을 이용하는 사람은 많았지만 정작 저는 자취를 시작하며 필요한 가전과 가구를 구하기 위해 처음 당근 중고 거래를 경험했습니다.
+          그동안 이용하지 않았던 이유는 '중고 제품'을 '모르는 사람'과 '거래'해야 하기 때문에 망설였기 때문입니다.
+        </p>
+        <p>
+          그러나 직접 경험해보니, 모르는 사람과의 중고 거래가 아닌 불과 몇 분 거리에 있는 이웃과 연결되어 있다는 따뜻한 경험이라는 것을 느꼈습니다.
+          제가 가진 기술과 문제 해결 능력을 활용해, 이웃과의 연결을 더욱 매끄럽고 의미 있게 만들어 따뜻한 지역 사회를 구축하려는 당근의 비전에 직접 기여하고 싶어 지원했습니다.
+        </p>
+
+        <h3>Why Machine Learning Intern?</h3>
+        <p>
+          제 머신러닝 개발의 핵심 목표는 ‘사용자의 숨겨진 니즈를 발굴하고 다음 행동을 한 발 먼저 예측하는 모델’을 개발하는 것입니다.
+          특히 공고에서 [피드품질팀 Vertical Part]의 ‘다양한 서비스와 데이터 형태를 통합적으로 이해하는 ML 모델’ 구축 목표에 공감하며, 이번 인턴십에서 이러한 목표를 달성하는 데 기여하고 싶습니다.
+        </p>
+        <p>
+          당근의 대규모 트래픽과 중고 거래, 동네 생활 등 다양한 버티컬 데이터를 활용해 개별 서비스의 성장과 홈피드의 품질을 동시에 개선하는 알고리즘 솔루션을 설계하고,
+          이를 실제 프로덕션 환경에 배포하며 핵심적인 성장 동력을 만들어보는 기회에 도전하고 싶습니다.
+        </p>
+      </div>
+    </section>
+    
+    <!-- 4. Experience 원래대로 -->
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <ul>
+        <li>
+          <strong>Ewha Womans University</strong><br />
+          - Bachelor's Student, Artificial Intelligence <br />
+          - Mar 2022 – Present
+        </li>
+        <li>
+          <strong>AIstein Lab</strong><br />
+          - Undergraduate Intern <br />
+          - ClimateAI Intern <br />
+          - Apr 2024 – Jul 2025
+        </li>
+        <li>
+          <strong>Prometheus AI Student Club</strong><br />
+          - Mar 2023 – Aug 2024
+        </li>
+        <li>
+          <strong>Ewha Campusleader, Official Student Ambassador</strong><br />
+          - Jun 2022 – Aug 2024
+        </li>
+      </ul>
+    </section>
+
+    <!-- 프로젝트 섹션 -->
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3><a href="https://sable-glade-4be.notion.site/Transformer-Based-Atmospheric-River-Segmentation-Model-from-Climate-Reanalysis-Data-27694a7d407a803a9d09d2c9999f407c?pvs=143" target="_blank" rel="noopener">Transformer-Based Atmospheric River Segmentation Model from Climate Reanalysis Data</a></h3>
+          <p>Multi-channel climate fields → AR segmentation. Custom NetCDF mapper, balanced loss, and evaluation toolkit.</p>
+          <div class="meta">
+            <span>Python • PyTorch • CV</span>
+            <span>2025</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://sable-glade-4be.notion.site/2ab94a7d407a80e0bdc2fb85b2f53fc2" target="_blank" rel="noopener">노래 발매 계절 추천 알고리즘</a></h3>
+          <p>Decision Tree, Random Forest, XGBoost, KNN을 활용해 흥행에 실패한 노래의 적절한 발매 계절 제안 알고리즘 제작</p>
+          <div class="meta">
+            <span>Python • ML • Recommendation_System</span>
+            <span>2025</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://sable-glade-4be.notion.site/eBook-BGM-Generator-27594a7d407a80199e7aee16792f1e29?pvs=143" target="_blank" rel="noopener">ebook BGM Generator</a></h3>
+          <p>Window-level sentiment → audio prompts; 20-second loops via text-to-audio models</p>
+          <div class="meta">
+            <span>Python • PyTorch • NLP</span>
+            <span>Startup Hackathon</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://sable-glade-4be.notion.site/WEATHIE-27594a7d407a801ca628df7a7600abdd?pvs=143" target="_blank" rel="noopener">Weathie</a></h3>
+          <p>B2B weather-based route recommendation service</p>
+          <div class="meta">
+            <span>Startup</span>
+            <span>Prototype</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/use08174/SpeechPT" target="_blank" rel="noopener">AI Speech Practice Website</a></h3>
+          <p>Developing a web platform for AI-driven speech practice with real-time feedback</p>
+          <div class="meta">
+            <span>Python • PyTorch • FastAPI • NLP</span>
+            <span>Prototype</span>
+          </div>
+        </article>
+        <article class="card">
+          <h3><a href="https://github.com/jjihwan/Voice-Cloning" target="_blank" rel="noopener">Voice Conversion</a></h3>
+          <p>Real-time AI voice conversion that keeps the words and intonation the same while changing the speaker’s tone to any target style.</p>
+          <div class="meta">
+            <span>Python • PyTorch • Audio</span>
+            <span>Youtube Shorts</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 논문/발표 섹션 -->
+    <section id="publications" aria-labelledby="pubs-title">
+      <h2 id="pubs-title">Publications & Paper Review</h2>
+      <ul>
+        <li>
+          <strong>Transformer-Based Atmospheric River Segmentation Model from Climate Reanalysis Data</strong> — Abstract. Submitted to AGU, 2025. <a href="agu_2025.pdf" target="_blank" rel="noopener">PDF</a>
+        </li>
+        <li>
+          <strong>Paper Review</strong> — Velog <a href="https://velog.io/@ittechhurray/posts">ittechhurray</a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- 연락 섹션 -->
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Email: <a href="mailto:seoyen1122@gmail.com">seoyen1122@gmail.com</a> · GitHub: <a href="https://github.com/seoyen1122" target="_blank" rel="noopener">@seoyen1122</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Seo Yen Lim. Built with ❤ on GitHub Pages.</div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
