@@ -86,19 +86,31 @@
 
     footer { border-top: 1px solid var(--border); padding: 24px 0; color: var(--muted); }
 
-    /* 히어로 영역 */
-    .hero {
-      padding: 72px 0 40px;
-      text-align: center;
+    /* Experience with Photo */
+    .experience-wrapper {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 48px;
     }
-    /* 히어로 사진 */
-    .hero-photo {
-      display: block;
+    .experience-content {
+      flex: 1;
+    }
+    .experience-photo {
       width: 300px;
       height: auto;
       border-radius: 16px;
-      margin: 0 auto 24px;
       object-fit: cover;
+      flex-shrink: 0;
+    }
+    @media (max-width: 760px) {
+      .experience-wrapper {
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+      .experience-photo {
+        width: 250px;
+      }
     }
 
   </style>
@@ -120,39 +132,39 @@
   </header>
 
   <main id="main" class="container">
-    <!-- 히어로 영역 -->
-    <section class="hero" aria-labelledby="hero-title">
-      <img src="profile.jpg" alt="Profile photo of Seo Yen Lim" class="hero-photo" />
-    </section>
-    
-    <!-- 4. Experience 원래대로 -->
+    <!-- Experience with Photo -->
     <section id="experience" aria-labelledby="experience-title">
       <h2 id="experience-title">Experience</h2>
-      <ul>
-        <li>
-          <strong>Allganize Korea</strong><br />
-          - Dec 2025 – Present
-        </li>
-        <li>
-          <strong>Ewha Womans University</strong><br />
-          - Bachelor's Student, Artificial Intelligence <br />
-          - Mar 2022 – Present
-        </li>
-        <li>
-          <strong>AIstein Lab</strong><br />
-          - Undergraduate Intern <br />
-          - ClimateAI Intern <br />
-          - Apr 2024 – Jul 2025
-        </li>
-        <li>
-          <strong>Prometheus AI Student Club</strong><br />
-          - Mar 2023 – Aug 2024
-        </li>
-        <li>
-          <strong>Ewha Campusleader, Official Student Ambassador</strong><br />
-          - Jun 2022 – Aug 2024
-        </li>
-      </ul>
+      <div class="experience-wrapper">
+        <div class="experience-content">
+          <ul>
+            <li>
+              <strong>Allganize Korea</strong><br />
+              - Dec 2025 – Present
+            </li>
+            <li>
+              <strong>Ewha Womans University</strong><br />
+              - Bachelor's Student, Artificial Intelligence <br />
+              - Mar 2022 – Present
+            </li>
+            <li>
+              <strong>AIstein Lab</strong><br />
+              - Undergraduate Intern <br />
+              - ClimateAI Intern <br />
+              - Apr 2024 – Jul 2025
+            </li>
+            <li>
+              <strong>Prometheus AI Student Club</strong><br />
+              - Mar 2023 – Aug 2024
+            </li>
+            <li>
+              <strong>Ewha Campusleader, Official Student Ambassador</strong><br />
+              - Jun 2022 – Aug 2024
+            </li>
+          </ul>
+        </div>
+        <img src="profile.jpg" alt="Profile photo of Seo Yen Lim" class="experience-photo" />
+      </div>
     </section>
 
     <!-- 프로젝트 섹션 -->
